@@ -1,5 +1,6 @@
 package com.example.JPA;
 
+import com.example.JPA.entity.BloodGroup;
 import com.example.JPA.entity.Patient;
 import com.example.JPA.repository.PatientRepo;
 import org.junit.jupiter.api.Test;
@@ -18,10 +19,18 @@ public class PatientTests {
 //        List<Patient> patientList =patientRepo.findAll();
 //        System.out.println(patientList);
 
-        Patient patient = patientRepo.findByName("Diya Patel");
-        System.out.println(patient);
+//        List<Patient> patientList = patientRepo.findByBloodGroup(BloodGroup.A);
+//        for(Patient patient : patientList){
+//            System.out.println(patient);
+//
+//
+//        }
 
-    }
+        int rowsUpdated = patientRepo.updateWithId("Arav Sharma" , 1L);
+        System.out.println(rowsUpdated);
 
 
-}
+    }}
+
+
+
