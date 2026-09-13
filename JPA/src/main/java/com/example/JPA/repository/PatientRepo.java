@@ -4,6 +4,8 @@ import com.example.JPA.dto.BloodGroupResponseEntity;
 import com.example.JPA.entity.BloodGroup;
 import com.example.JPA.entity.Patient;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -33,6 +35,9 @@ public interface PatientRepo extends JpaRepository<Patient , Long> {
     @Query("select new com.example.JPA.dto.BloodGroupResponseEntity(p.bloodGroup," +
             " Count(p)) from Patient p group by p.bloodGroup")
     List<BloodGroupResponseEntity> countEachBloodGroupType();
+
+    @Query(value = "select * from patient" , nativeQuery = true)
+    Page <Patient> findAllPatient(Pageable pageable);
 
 
 
