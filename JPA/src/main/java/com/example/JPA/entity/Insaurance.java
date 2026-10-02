@@ -37,9 +37,8 @@ public class Insaurance {
 
 
 
-//    @OneToOne
-//    @JoinColumn(name = "patient_id")
-//    private Patient patient;
+    @OneToOne
+    private Patient patient;
 
 
 

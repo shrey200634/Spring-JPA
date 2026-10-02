@@ -37,7 +37,7 @@ public interface PatientRepo extends JpaRepository<Patient , Long> {
     List<BloodGroupResponseEntity> countEachBloodGroupType();
 
     @Query(value = "select * from patient" , nativeQuery = true)
-    Page <Patient> findAllPatient(Pageable pageable);
+    Page   <Patient> findAllPatient(Pageable pageable);
 
 
 

@@ -50,7 +50,7 @@ public class Patient {
 
 
     @OneToOne
-    @JoinColumn(name = "patient_insaurance_id")
+    @JoinColumn(name = "patient_insaurance_id") // also  do unique = false but here not needed
     private Insaurance insaurance ;
 
 
