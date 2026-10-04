@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "patient"
@@ -50,8 +51,15 @@ public class Patient {
 
 
     @OneToOne
-    @JoinColumn(name = "patient_insaurance_id") // also  do unique = false but here not needed
+    @JoinColumn(name = "patient_insaurance_id") // also  do unique = false but here not needed //owing side
     private Insaurance insaurance ;
+
+
+
+
+    @OneToMany(mappedBy = "patient")       // we need to tell reference so join colun can not make ..// inverse side
+    private List<Appoinment> appoinments ;
+
 
 
     

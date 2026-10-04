@@ -37,7 +37,7 @@ public class Insaurance {
 
 
 
-    @OneToOne
+    @OneToOne(mappedBy = "insaurance")   ///  inverse side
     private Patient patient;
 
 
