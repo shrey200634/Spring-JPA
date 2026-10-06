@@ -3,7 +3,9 @@ package com.example.JPA.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -28,6 +30,9 @@ public class Doctor {
 
    @OneToMany(mappedBy = "doctor")
     private List<Appoinment> appoinments;
+
+   @ManyToMany(mappedBy = "doctors")
+   private Set<Department> departments = new HashSet<>();
 
 
 

@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,7 +33,11 @@ public class Department {
     // many to many mapping example
 
     @ManyToMany
-    @JoinTable
+    @JoinTable(
+            name = "my_dpt_doctor" ,
+            joinColumns = @JoinColumn(name = "dpt_id"),
+            inverseJoinColumns = @JoinColumn(name = "doctor_id")
+    )
     private Set<Doctor> doctors  = new HashSet<>();
 
 }
