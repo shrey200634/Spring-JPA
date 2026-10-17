@@ -36,6 +36,8 @@ public interface PatientRepo extends JpaRepository<Patient , Long> {
             " Count(p)) from Patient p group by p.bloodGroup")
     List<BloodGroupResponseEntity> countEachBloodGroupType();
 
+    //this is the peageable such that this will help in getting the peageble data suppose we want some data
+
     @Query(value = "select * from patient" , nativeQuery = true)
     Page   <Patient> findAllPatient(Pageable pageable);
 
