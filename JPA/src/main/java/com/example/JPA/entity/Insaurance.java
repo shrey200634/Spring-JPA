@@ -2,12 +2,10 @@ package com.example.JPA.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,6 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Insaurance {
 
     @Id
@@ -28,7 +27,7 @@ public class Insaurance {
     private String provider ;
 
     @Column(nullable = false)
-    private LocalDateTime validUntil ;
+    private LocalDate validUntil ;
 
     @CreationTimestamp
     @Column(nullable = false , updatable = false)

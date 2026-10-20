@@ -1,6 +1,7 @@
 package com.example.JPA.entity;
 
 import jakarta.persistence.*;
+import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Setter
 @Entity
 @Table(name = "patient"
         , uniqueConstraints = {
