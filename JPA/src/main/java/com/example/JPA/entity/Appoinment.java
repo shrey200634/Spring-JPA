@@ -16,7 +16,7 @@ public class Appoinment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id ;
+    private Long id ;
 
     @Column(nullable = false)
     private LocalDateTime appoinmentTime ;
@@ -24,7 +24,7 @@ public class Appoinment {
     @Column(length = 500)
     private String reason ;
 
-    @ManyToOne
+    @ManyToOne  // no need to define the cascading cauz we dont want when appoinment is form patient is also form
     @JoinColumn(name = "patient_id " , nullable = false) // owing side
     private Patient patient;
 

@@ -52,14 +52,14 @@ public class Patient {
 
 
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST , CascadeType.MERGE})
     @JoinColumn(name = "patient_insaurance_id") // also  do unique = false but here not needed //owing side
     private Insaurance insaurance ;
 
 
 
 
-    @OneToMany(mappedBy = "patient")       // we need to tell reference so join colun can not make ..// inverse side
+    @OneToMany(mappedBy = "patient" , cascade = {CascadeType.REMOVE} , orphanRemoval = true)       // we need to tell reference so join colun can not make ..// inverse side
     private List<Appoinment> appoinments ;
 
 

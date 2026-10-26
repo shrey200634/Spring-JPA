@@ -19,7 +19,7 @@ public class InsauranceTest {
     @Test
     public  void testInsaurance(){
         Insaurance insaurance = Insaurance.builder()
-                .policyNumber("HDFC*^@")
+                .policyNumber("HDFC_123")
                 .provider("HDFC")
                 .validUntil(LocalDate.of(2030 , 12 , 12))
                 .build();
